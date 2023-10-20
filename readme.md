@@ -9,7 +9,7 @@
 
 先克隆项目
 ```bash
-git clone https://github.com/cereal-kitty/telegram-pwsbot
+git clone https://github.com/cereal-kitty/YMCheck
 cd telegram-pwsbot
 npm install
 ```
