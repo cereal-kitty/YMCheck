@@ -1,3 +1,7 @@
+const Promise = require('bluebird');
+Promise.config({
+  cancellation: true
+});
 import TeleBot from 'node-telegram-bot-api';
 import helper from './utils/helper';
 import Lang from './utils/Lang';
@@ -30,7 +34,7 @@ bot.getMe().then(info => { helper.updateConfig({BotID: info.id, BotUserName: inf
  * callback query data
  * @type {Object}
  */
-const vars = {
+ const vars = {
     REC_ANY: 'receive:anonymous',
     REC_REAL: 'receive:real',
     SUB_ANY: 'submission_type:anonymous',
@@ -39,7 +43,7 @@ const vars = {
     BOT_NOAUTH_KICK: 'ETELEGRAM: 403 Forbidden: bot was kicked from the channel chat',
     BOT_NOAUTH: 'ETELEGRAM: 403 Forbidden: bot is not a member of the channel chat',
     BOT_BLOCK: 'ETELEGRAM: 403 Forbidden: bot was blocked by the user',
-}
+ }
 
 // 语言工具
 const lang = new Lang(config.Lang, vars);
